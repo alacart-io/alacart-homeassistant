@@ -1,0 +1,32 @@
+# Tool settings for the integration's checks. The integration itself is not a Python package.
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF", "ASYNC", "PT", "RET", "C4"]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+known-first-party = ["custom_components"]
+combine-as-imports = true
+
+[tool.mypy]
+strict = true
+python_version = "3.14"
+files = ["custom_components/alacart"]
+# Without this, mypy reads `custom_components/alacart` as the top-level package `alacart` and
+# hides the library of the same name.
+explicit_package_bases = true
+mypy_path = "."
+
+[[tool.mypy.overrides]]
+# Home Assistant's packages re-export names, such as `TodoItem` from `homeassistant.components.todo`.
+module = ["homeassistant.*"]
+implicit_reexport = true

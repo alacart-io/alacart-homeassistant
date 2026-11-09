@@ -1,0 +1,59 @@
+{
+  "config": {
+    "step": {
+      "pick_implementation": {
+        "title": "Choose how to sign in",
+        "data": {
+          "implementation": "Sign-in method"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in to Alacart again",
+        "description": "Alacart no longer accepts the sign-in for {account}. Sign in again to keep your shopping lists in Home Assistant."
+      }
+    },
+    "abort": {
+      "already_configured": "This Alacart account is already linked to Home Assistant.",
+      "reauth_successful": "You are signed in again.",
+      "wrong_account": "You signed in with another Alacart account. Sign in with the account you linked before.",
+      "premium_required": "The Alacart account has no premium. Linking it to Home Assistant needs premium.",
+      "cannot_connect": "Home Assistant could not reach Alacart. Try again later.",
+      "missing_configuration": "The Alacart integration has no way to sign in. Restart Home Assistant and try again."
+    },
+    "create_entry": {
+      "default": "Your Alacart shopping lists are now to-do lists in Home Assistant."
+    }
+  },
+  "application_credentials": {
+    "description": "Enter the client id of the app you registered on Alacart's developer page. Most users do not need this. Without it, Home Assistant signs in with its own client id."
+  },
+  "exceptions": {
+    "invalid_token": {
+      "message": "Alacart no longer accepts the sign-in. Sign in again under Settings, Devices & services."
+    },
+    "insufficient_scope": {
+      "message": "You allowed Home Assistant to read your lists only. Sign in again and allow changes."
+    },
+    "premium_required": {
+      "message": "The Alacart account has no premium, so Home Assistant cannot reach your shopping lists."
+    },
+    "list_full": {
+      "message": "The shopping list is full. Remove some items and try again."
+    },
+    "item_not_found": {
+      "message": "The item is no longer on the list."
+    },
+    "request_failed": {
+      "message": "Alacart could not make the change: {error}"
+    },
+    "token_refresh_failed": {
+      "message": "Home Assistant could not renew the sign-in with Alacart. It tries again later."
+    },
+    "update_failed": {
+      "message": "Home Assistant could not read your Alacart shopping lists: {error}"
+    },
+    "try_later": {
+      "message": "Alacart is busy. Try again in a minute."
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "config": {
+    "step": {
+      "pick_implementation": {
+        "title": "Välj hur du loggar in",
+        "data": {
+          "implementation": "Inloggningssätt"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Logga in på Alacart igen",
+        "description": "Alacart godtar inte längre inloggningen för {account}. Logga in igen för att behålla dina inköpslistor i Home Assistant."
+      }
+    },
+    "abort": {
+      "already_configured": "Det här Alacart-kontot är redan kopplat till Home Assistant.",
+      "reauth_successful": "Du är inloggad igen.",
+      "wrong_account": "Du loggade in med ett annat Alacart-konto. Logga in med kontot som du kopplade tidigare.",
+      "premium_required": "Alacart-kontot har inte premium. Det krävs premium för att koppla kontot till Home Assistant.",
+      "cannot_connect": "Home Assistant kunde inte nå Alacart. Försök igen senare.",
+      "missing_configuration": "Alacart-integrationen kan inte logga in. Starta om Home Assistant och försök igen."
+    },
+    "create_entry": {
+      "default": "Dina inköpslistor från Alacart är nu att göra-listor i Home Assistant."
+    }
+  },
+  "application_credentials": {
+    "description": "Ange klient-id:t för appen som du registrerade på Alacarts utvecklarsida. De flesta behöver inte det här. Utan det loggar Home Assistant in med sitt eget klient-id."
+  },
+  "exceptions": {
+    "invalid_token": {
+      "message": "Alacart godtar inte längre inloggningen. Logga in igen under Inställningar, Enheter och tjänster."
+    },
+    "insufficient_scope": {
+      "message": "Du gav Home Assistant rätt att bara läsa dina listor. Logga in igen och tillåt ändringar."
+    },
+    "premium_required": {
+      "message": "Alacart-kontot har inte premium, så Home Assistant kommer inte åt dina inköpslistor."
+    },
+    "list_full": {
+      "message": "Inköpslistan är full. Ta bort några varor och försök igen."
+    },
+    "item_not_found": {
+      "message": "Varan finns inte längre på listan."
+    },
+    "request_failed": {
+      "message": "Alacart kunde inte göra ändringen: {error}"
+    },
+    "token_refresh_failed": {
+      "message": "Home Assistant kunde inte förnya inloggningen hos Alacart. Den försöker igen senare."
+    },
+    "update_failed": {
+      "message": "Home Assistant kunde inte läsa dina inköpslistor från Alacart: {error}"
+    },
+    "try_later": {
+      "message": "Alacart är upptaget. Försök igen om en minut."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "domain": "alacart",
+  "name": "Alacart",
+  "codeowners": [
+    "@migr1"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "application_credentials",
+    "my"
+  ],
+  "documentation": "https://github.com/alacart-io/alacart-homeassistant",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/alacart-io/alacart-homeassistant/issues",
+  "loggers": [
+    "alacart"
+  ],
+  "requirements": [
+    "alacart==0.1.0"
+  ],
+  "version": "0.1.0"
+}
