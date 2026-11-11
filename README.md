@@ -23,9 +23,16 @@ repository:
 1. In HACS, open the menu in the top right corner and choose *Custom repositories*.
 2. Enter `https://github.com/alacart-io/alacart-homeassistant`, choose the type *Integration*, and
    click *Add*.
-3. Open *Alacart* in HACS, and turn on beta versions for it. The integration has only
-   pre-releases so far, and HACS offers a pre-release only when beta versions are on.
-4. Download the newest version, and restart Home Assistant.
+3. Open *Alacart* in HACS, download it, and restart Home Assistant. Until the integration has a
+   full release, HACS installs the newest code on `main`.
+4. Turn on pre-releases, so HACS installs released versions. Go to *Settings*, *Devices &
+   services*, *Entities*, and open *Alacart Pre-release*. HACS adds the switch disabled, so turn
+   on *Enabled* in its settings, and wait about 30 seconds. Then turn the switch on.
+5. HACS now offers the newest pre-release under *Settings*, *Updates*. Install it, and restart
+   Home Assistant.
+
+After the first full release, you can turn the *Alacart Pre-release* switch off. HACS then offers
+only full releases.
 
 ## Linking your account
 
@@ -79,7 +86,7 @@ alacart:
   server: beta
 ```
 
-New entries then sign in to beta, and their titles end in "(beta)". Entries you linked before keep
+New entries then sign in to beta, and their titles end in `(beta)`. Entries you linked before keep
 their server. A beta account needs beta premium, which Alacart gives to the testers it invites.
 
 To move back to production, delete the beta entry, remove the two lines, restart Home Assistant,
@@ -122,14 +129,21 @@ Hassfest, Home Assistant's own check of an integration's files, and the HACS che
 1. Set the new version in `custom_components/alacart/manifest.json`, and merge the change to
    `main`.
 2. Create a GitHub release whose tag is the version with a `v` in front, such as `v0.1.0`. Mark it
-   as a pre-release while the integration is in testing.
+   as a pre-release while the integration is in testing. Every release needs a version that no
+   earlier release used, whether it is a pre-release or a full release.
 
 HACS offers a release as soon as it is published, so check that CI passed on the commit before
-you publish. A pre-release reaches only the users who turned on beta versions.
+you publish. A pre-release reaches only the users who turned on the *Alacart Pre-release* switch.
+Until the first full release, HACS installs the newest commit on `main` for every other user, so
+merge to `main` only what is ready for testers.
 
-The workflow `.github/workflows/release.yml` then checks that the tag matches the version in the
-manifest, and that the commit is on `main`, and runs every check of the CI workflow. If it fails,
-delete the release, fix the problem, and release again.
+The workflow `.github/workflows/release.yml` then runs these checks:
+
+- The tag matches the version in the manifest.
+- The commit is on `main`.
+- Every check of the CI workflow passes.
+
+If the workflow fails, delete the release, fix the problem, and release again.
 
 ## License
 
