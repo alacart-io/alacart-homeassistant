@@ -17,19 +17,21 @@ Python library.
 
 ## Installing
 
-HACS does not list the integration yet, so you add this repository to HACS as a custom
-repository:
+1. In HACS, search for `Alacart`.
+2. Open *Alacart*, download it, and restart Home Assistant.
+
+HACS offers each new full release under *Settings*, *Updates*.
+
+HACS reads its list of integrations every few hours. If the search does not find the integration,
+add this repository to HACS as a custom repository, and then download it as above:
 
 1. In HACS, open the menu in the top right corner and choose *Custom repositories*.
 2. Enter `https://github.com/alacart-io/alacart-homeassistant`, choose the type *Integration*, and
    click *Add*.
-3. Open *Alacart* in HACS, download it, and restart Home Assistant.
 
-HACS offers each new full release under *Settings*, *Updates*.
-
-If you tested the integration, you may have turned on its *Alacart Pre-release* switch under
-*Settings*, *Devices & services*, *Entities*. You can turn the switch off. HACS then offers only
-full releases.
+If you tested a pre-release of the integration, you may have turned on its *Alacart Pre-release*
+switch under *Settings*, *Devices & services*, *Entities*. You can turn the switch off. HACS then
+offers only full releases.
 
 ## Linking your account
 
